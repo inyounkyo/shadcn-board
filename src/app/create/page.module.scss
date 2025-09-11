@@ -42,6 +42,54 @@
                    color: #6d6d6d;
                 }
             }
+            .calendarBox {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &__calendar {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                }
+            }
         }
     }
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: calc(100% - 250px);
+        padding: 28px 16px; 
+
+        &__infoBox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .title {
+                font-size: 24px;
+                font-weight: 700;
+                color: #454545;
+            }
+            .subTitle {
+                margin: 14px 0 28px 0;
+                font-size: 18px;
+                color: #454545;
+            }
+            .button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 74px;
+                height: 74px;
+                outline: none;   
+                border: none;
+                cursor: pointer;
+            }      
+        }
+    }
+
 }
