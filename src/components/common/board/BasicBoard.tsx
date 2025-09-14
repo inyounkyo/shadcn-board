@@ -5,6 +5,7 @@ import { ChevronUp } from "lucide-react"
 // CSS
 import styles from './BasicBoard.module.scss'
 import LabelCalendar from "@/components/calender/LabelCalendar"
+import MarkDownDialog from "../dialog/MarkDownDialog"
 
 
 function BasicBoard() {
@@ -33,7 +34,9 @@ function BasicBoard() {
             </Button>
         </div>
       </div>
-
+      <div className={styles.container__footer}>
+         <MarkDownDialog />
+      </div>
     </div>
   )
 }

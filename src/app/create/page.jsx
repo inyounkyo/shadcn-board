@@ -4,6 +4,7 @@ import { Progress } from "@/components/ui/progress"
 import styles from './page.module.scss'
 import { Button } from '@/components/ui/button';
 import LabelCalendar from './../../components/calender/LabelCalendar';
+import BasicBoard from './../../components/common/board/BasicBoard';
 
 function page() {
   return (
@@ -31,13 +32,14 @@ function page() {
         </div>
       </header>
       <main className={styles.container__body}>
-        <div className={styles.container__body__infoBox}>
+        {/* <div className={styles.container__body__infoBox}>
           <span className={styles.title}>There is board yet.</span>
           <span className={styles.subTitle}>Click the button and start flashing!</span>
           <button className={styles.button}>
             <Image src="/assets/images/round-button.svg" alt="round-button" width={100} height={100} />
           </button>
-        </div>
+        </div> */}
+        <BasicBoard />
       </main>
     </div>
   )
