@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Noto_Sans_KR } from "next/font/google";
+// Shadcn UI
+import { Toaster } from "@/components/ui"
 // 전역 css
 import "@/styles/globals.css";
 import SideNavigation from "@/components/common/navigation/SideNavigation";
 
-const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700"] });
+const NOTO_SANS_KR = Noto_Sans_KR({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Shadcn UI - Todoboard",
@@ -17,10 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={roboto.className}>
+    <html lang="ko">
+      <body className={NOTO_SANS_KR.className}>
         <SideNavigation />
         {children}
+        <Toaster />
       </body>
     </html>
   );

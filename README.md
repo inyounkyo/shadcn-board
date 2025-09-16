@@ -4,6 +4,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 npx create-next-app@latest . --typescript --tailwind --eslint
 npx shadcn@latest init
 
+## Markdown Editor 
+npm i @uiw/react-md-editor
+
 ## Extends use
 ES7 React/Redux/GraphQL/React-Native snipp
 Tailwind CSS IntelliSense
