@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react";
+import { supabase } from "@/utils/supabase";
+import { ChevronLeft } from "lucide-react";
 import {nanoid} from "nanoid";
 import Image from "next/image";
 import { useAtom } from "jotai";
@@ -13,8 +15,7 @@ import { usePathname, useRouter } from "next/navigation";
 import BasicBoard from '../../../components/common/board/BasicBoard';
 // CSS
 import styles from './page.module.scss'
-import { supabase } from "@/utils/supabase";
-import { ChevronLeft } from "lucide-react";
+
 
 
 interface Todo {
@@ -34,7 +35,7 @@ interface BoardContent {
   content: string;
 }
 
-function page() {
+function TaskPage() {
   const router = useRouter();
   const pathname = usePathname();
   
@@ -169,4 +170,4 @@ function page() {
   )
 }
 
-export default page
+export default TaskPage;
