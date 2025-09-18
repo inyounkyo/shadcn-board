@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
-import SideNavigation from "@/components/common/navigation/SideNavigation";
+import { SideNavigation } from "@/components/common";
 // Shadcn UI
 import { Toaster } from "@/components/ui"
 // 전역 css

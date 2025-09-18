@@ -1,45 +1,13 @@
 "use client"
 
-import { useRouter } from 'next/navigation'
-import { supabase } from "@/utils/supabase";
+// Hooks
+import { useCreateTask } from '@/hooks/apis';
 // Shadcn UI
 import { Button } from '@/components/ui'
-import { toast } from "sonner"
 
 function InitPage() {
-  const router = useRouter();
-
-  // 페이지 생성 및 Supabase 연동
-  const handleCreateTask = async() => {
-    console.log("함수 호출");
-
-    // Supabase Database row 생성
-    const { error, status } = await supabase.from("todos").insert([
-      {
-        title: "", 
-        start_date: new Date(),
-        end_date: new Date(),
-        contents: [],
-      },
-    ]).select();
-    
-    if (error) {
-      console.log(error);
-    }
-
-     // 방금 생성한 TODOLIST의 ID 값으로 URL 파라미터 생성/변경 => Next.js 동적 라우팅(Dynamic Routing)
-    let { data } = await supabase.from("todos").select();
-
-    if (status === 201) {
-      	toast("페이지 생성 완료", {
-          description: "새로운 투두리스트 생성 되었습니다.",
-        });
-
-      if (data){
-        router.push( `/create/${data[data?.length -1].id}` );
-      } else return;
-    }
-  }
+  // TASK 생성
+  const handleCreateTask = useCreateTask();
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center">
